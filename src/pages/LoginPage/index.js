@@ -91,8 +91,8 @@ export default function LoginPage({history}) {
 
         if (session === "") {
             handleOpenErrorModal();
-            setTitleError("Preencha todos os campos");
-            setErrorMessage("Você precisa preencher todos os campos antes de continuar.");
+            setTitleError("Fill all fields");
+            setErrorMessage("You need complete all fields before proceeding.");
         } else {
             handleToggleBackdrop();
             await startSession();
@@ -120,8 +120,8 @@ export default function LoginPage({history}) {
             setTimeout(function () {
                 handleCloseBackdrop();
                 handleOpenErrorModal();
-                setTitleError("Oops... Algo deu errado.");
-                setErrorMessage("Verifique se a sessão e o token estão corretos.");
+                setTitleError("Oops... Something went wrong");
+                setErrorMessage("Check that the session and token are correct.");
             }, 2000);
         }
     }
@@ -222,22 +222,22 @@ export default function LoginPage({history}) {
                                         qrCode !== "" ? null : (
                                             <Formulario onSubmit={(e) => submitSession(e)}>
                                                 <Title id={"title"}>
-                                                    Entre com sua sessão
+                                                    Login with your session
                                                 </Title>
 
                                                 <Description id={"description"}>
-                                                    Digite o nome da sessão e token para entrar em sua conta
+                                                    Enter session name and token to login into your account
                                                 </Description>
 
                                                 <div className={"top-info"}>
                                                     <small>
-                                                        Sessão
+                                                        Session
                                                     </small>
                                                 </div>
                                                 <input
                                                     id={"session"}
                                                     autoComplete="off"
-                                                    placeholder="Nome da sessão"
+                                                    placeholder="Session name"
                                                     value={session}
                                                     onChange={(e) => setSession(e.target.value)}
                                                 />
@@ -248,7 +248,7 @@ export default function LoginPage({history}) {
                                                     </small>
 
                                                     <span onClick={() => handleOpenModal()}>
-                                                        Não sabe o token?
+                                                        Don't know the token?
                                                     </span>
                                                 </div>
 
@@ -261,7 +261,7 @@ export default function LoginPage({history}) {
                                                 />
 
                                                 <button type="submit" id="send-btn">
-                                                    Enviar
+                                                    Submit
                                                 </button>
                                             </Formulario>
                                         )
